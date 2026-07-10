@@ -235,6 +235,24 @@
   /* lightbox caption */
   .lbcap{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);color:#fff;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;text-align:center;max-width:86%;text-shadow:0 2px 12px rgba(0,0,0,.7);pointer-events:none}
 
+
+  /* LETTER DATE */
+  .ldate{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);text-align:right;font-size:.92rem;letter-spacing:.05em;margin-bottom:.6rem}
+  /* ADORATION */
+  .adore{text-align:center;max-width:620px;margin:0 auto}
+  .adore p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:var(--ink);margin-bottom:1rem;line-height:1.65}
+  .adore-big{font-family:'Parisienne',cursive;font-size:clamp(1.9rem,6vw,2.7rem);color:var(--rose);text-align:center;margin-top:1.9rem;line-height:1.3}
+  /* REPLY */
+  .reply{max-width:560px;margin:0 auto;text-align:center}
+  .reply textarea{width:100%;min-height:130px;font-family:'Lora',serif;font-size:1.05rem;color:var(--ink);background:var(--ivory-2);border:1px solid rgba(194,154,84,.4);border-radius:14px;padding:1rem 1.1rem;outline:none;resize:vertical}
+  .reply textarea:focus{border-color:var(--rose)}
+  .reply-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+  .btn2{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;background:transparent;color:var(--wine);border:1px solid var(--wine);cursor:pointer;padding:.8rem 1.6rem;border-radius:40px;transition:background .3s,color .3s}
+  .btn2:hover{background:var(--wine);color:var(--ivory)}
+  .reply-note{margin-top:1rem;font-style:italic;color:var(--rose);min-height:1.2em;font-family:'Cormorant Garamond',serif}
+  /* SPECIAL reveal (taller) */
+  #special.show{max-height:2000px}
+
   /* footer */
   .end{text-align:center;padding-bottom:8rem}
   .end .fx{font-family:'Parisienne',cursive;font-size:clamp(2.4rem,9vw,4rem);color:var(--wine)}
@@ -257,9 +275,9 @@
   <p class="forr">just for you, Mahi</p>
   <p class="em">🤍</p>
   <p class="lock-t">This is a little world I made only for you.</p>
-  <p class="lock-s">Enter the secret word to come inside.</p>
+  <p class="lock-s">Enter our secret word to come inside.</p>
   <div class="pwbox" id="pwbox">
-    <input id="pw" type="password" placeholder="secret…" onkeydown="if(event.key==='Enter')tryUnlock()" autocomplete="off" autocapitalize="off">
+    <input id="pw" type="password" placeholder="our word…" onkeydown="if(event.key==='Enter')tryUnlock()" autocomplete="off" autocapitalize="off">
     <button onclick="tryUnlock()">Enter&nbsp;🤍</button>
   </div>
   <p class="pwerr" id="pwerr"></p>
@@ -308,6 +326,7 @@
 <!-- LETTER -->
 <section>
   <div class="letter reveal">
+    <p class="ldate">Written on the 8th of July</p>
     <p class="greet">Mahi,</p>
     <p>I don't know if my words can reach the place inside you that I have hurt. I don't know if this message will make anything better. But I still want to speak honestly, because there are things I should have understood earlier, said earlier, and shown earlier.</p>
     <p>I don't have fancy words. I only have a heart that has loved you in ways I often failed to express properly. I love your smile, your voice, your eyes, your laugh, the way you talk, the way you get excited over small things, the way you feel deeply, the way you care, the way you become soft even when the world has been hard on you. I love the tiny details of you that maybe you don't even notice about yourself. Not just the easy parts. Not just the happy version of you. <span class="emph">I love you as a whole person.</span></p>
@@ -437,6 +456,21 @@
   <p class="reveal" style="text-align:center;font-style:italic;color:var(--rose);margin-top:2rem;font-size:1.15rem">…and every one of these, I'd choose again.</p>
 </section>
 
+<!-- ADORATION -->
+<section>
+  <p class="eyebrow reveal">the whole truth, plainly</p>
+  <h2 class="title reveal">And this is <span>who you are</span></h2>
+  <div class="adore reveal">
+    <p>You are the most beautiful person I have ever seen — and your beauty is immeasurable, inside and out.</p>
+    <p>You are the most caring, the most understanding soul I have ever met.</p>
+    <p>You love with your whole self. You want the best for me — and you would not rest until you saw me reach my very peak.</p>
+    <p>You are the most glamorous girl in any room, and somehow also the cutest — impossibly, adorably cute.</p>
+    <p>Your cooking is amazing. Your heart is softer and warmer than you let the world see.</p>
+    <p>Without you, life feels gone — because, simply, you are my everything.</p>
+  </div>
+  <p class="adore-big reveal">You are mine, only mine —<br>and I am only yours.<br>I love you so much, Mahi.</p>
+</section>
+
 <!-- SONGS -->
 <section>
   <p class="eyebrow reveal">the songs that hold us</p>
@@ -483,6 +517,21 @@
   </div>
 </section>
 
+<!-- REPLY -->
+<section>
+  <p class="eyebrow reveal">only if you want to</p>
+  <h2 class="title reveal">Say anything <span>back</span></h2>
+  <p class="reveal" style="text-align:center;font-style:italic;color:var(--ink-soft);margin-bottom:2rem">There is no pressure, and no timeline. But if there is anything in your heart — a word, a feeling, or nothing at all — this little space is yours. 🤍</p>
+  <div class="reply reveal">
+    <textarea id="replyText" placeholder="write to me, whenever you are ready…"></textarea>
+    <div class="reply-btns">
+      <button class="btn" onclick="copyReply()">Copy my words</button>
+      <button class="btn2" onclick="waReply()">Send on WhatsApp</button>
+    </div>
+    <p class="reply-note" id="replyNote"></p>
+  </div>
+</section>
+
 <!-- VOWS -->
 <section>
   <p class="eyebrow reveal">not words — behavior</p>
@@ -505,12 +554,22 @@
   <p class="big reveal">Not a demand. Just a hope —<br>that one day, when I have truly become<br>the person you deserved from the start,<br>you will feel safe enough to choose me again.</p>
 </section>
 
+<!-- SPECIAL -->
+<section class="center">
+  <p class="eyebrow reveal">one last thing, only for you</p>
+  <h2 class="title reveal">Before you <span>go…</span></h2>
+  <button class="btn reveal" onclick="revealSpecial()">Press here 🤍</button>
+  <div class="hidden-msg" id="special">
+    <p>If you have read all the way to here — thank you. Not for forgiving me, because you owe me nothing — but for letting me say everything I needed to say. I know a website cannot undo pain, and that love has to be proven slowly, in real life, with real patience. But I needed you to see, all in one place, that you are treasured beyond anything I know how to put into words. Whatever you decide, and whenever you decide it, I am on your side — for your dreams, your exams, your peace, and the beautiful life ahead of you. You were never too much. You were always more than enough. And you always will be. — Ashfaque 🤍</p>
+  </div>
+</section>
+
 <!-- END -->
 <section class="end">
   <p class="reveal" style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:1.2rem;margin-bottom:.4rem">With honest love,</p>
   <p class="fx reveal">Always yours</p>
   <p class="sub reveal">for as long as it takes me to deserve you.</p>
-  <p class="date reveal">made with love, only for Mahi<br>~~Ashfaque</p>
+  <p class="date reveal">made with love, only for Mahi</p>
 </section>
 
 <div class="lbwrap" id="lbwrap" onclick="closeLb()"><span class="lbx" onclick="closeLb()">&times;</span><img id="lbimg" src=""><p class="lbcap" id="lbcap"></p></div>
@@ -624,6 +683,26 @@ function showToggle(){if(splaying){splaying=false;stopSL();document.getElementBy
 function showNext(){si=(si+1)%SL.length;renderSL();if(splaying)startSL();}
 function showPrev(){si=(si-1+SL.length)%SL.length;renderSL();if(splaying)startSL();}
 function showClose(){stopSL();document.getElementById("show").classList.remove("on");}
+</script>
+<script>
+/* reply box */
+var PHONE=""; /* <-- put your WhatsApp number here, e.g. 8801XXXXXXXXX (country code, no + or spaces) */
+function rnote(m){document.getElementById("replyNote").textContent=m;}
+function copyReply(){
+  var el=document.getElementById("replyText"), t=(el.value||"").trim();
+  if(!t){rnote("write something first \u{1F90D}");return;}
+  el.select();
+  try{ document.execCommand("copy"); rnote("copied \u{1F90D} now paste it to me anywhere you like"); }
+  catch(e){ if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){rnote("copied \u{1F90D}");});} else {rnote("select your words and copy \u{1F90D}");} }
+}
+function waReply(){
+  var t=(document.getElementById("replyText").value||"").trim();
+  if(!t){rnote("write something first \u{1F90D}");return;}
+  if(!PHONE){rnote("WhatsApp is not set yet \u2014 use Copy for now \u{1F90D}");return;}
+  window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(t),"_blank");
+}
+/* special reveal */
+function revealSpecial(){document.getElementById("special").classList.toggle("show");}
 </script>
 </body>
 </html>
